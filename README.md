@@ -8,10 +8,15 @@ The project is built using open-source tools and frameworks, including Python, P
 Repository Contents:
 
 api_scripts directory containing scripts for pulling data from the API and storing it in a PostgreSQL database
+
 dbt directory containing DBT models and related files for processing the data
+
 docs directory containing documentation and sample queries for accessing and analyzing the data in a business intelligence tool
+
 LICENSE file containing the license for the project
+
 README.md file providing an overview of the project and instructions for getting started
+
 Contributors:
 
 Lachlan Casey
