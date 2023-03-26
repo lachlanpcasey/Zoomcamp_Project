@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: crypto_data_project_raw_tables
+    database: dtc-de-updated
+    tables:
+      - name: BTC_*
