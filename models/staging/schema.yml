@@ -6,3 +6,7 @@ sources:
     database: dtc-de-updated
     tables:
       - name: BTC_*
+      - name: ETH_*
+      - name: LTC_*
+      - name: XRP_*
+      - name: ENS_*
