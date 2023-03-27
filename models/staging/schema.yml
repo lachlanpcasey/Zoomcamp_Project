@@ -10,3 +10,86 @@ sources:
       - name: LTC_*
       - name: XRP_*
       - name: ENS_*
+
+models:
+  - name: stg_btc
+    description: Staging table for Bitcoin price and volume data.
+    columns:
+      - name: date
+        description: The date of the data point.
+      - name: daily_price_low
+        description: The lowest price of Bitcoin on that day.
+      - name: daily_price_high
+        description: The highest price of Bitcoin on that day.
+      - name: daily_price_open
+        description: The opening price of Bitcoin on that day.
+      - name: daily_price_close
+        description: The closing price of Bitcoin on that day.
+      - name: crypto_volume
+        description: The volume of Bitcoin traded on that day.
+      - name: usd_volume
+        description: The volume of USD traded for Bitcoin on that day.
+  
+  - name: stg_ltc
+    description: Staging table for Litecoin price and volume data.
+    columns:
+      - name: date
+        description: The date of the data point.
+      - name: daily_price_low
+        description: The lowest price of Litecoin on that day.
+      - name: daily_price_high
+        description: The highest price of Litecoin on that day.
+      - name: daily_price_open
+        description: The opening price of Litecoin on that day.
+      - name: daily_price_close
+        description: The closing price of Litecoin on that day.
+      - name: crypto_volume
+        description: The volume of Litecoin traded on that day.
+      - name: usd_volume
+        description: The volume of USD traded for Litecoin on that day.
+  
+  - name: stg_xrp
+    description: Staging table for Ripple price and volume data.
+    columns:
+      - name: date
+        description: The date of the data point.
+      - name: daily_price_low
+        description: The lowest price of Ripple on that day.
+      - name: daily_price_high
+        description: The highest price of Ripple on that day.
+      - name: daily_price_open
+        description: The opening price of Ripple on that day.
+      - name: daily_price_close
+        description: The closing price of Ripple on that day.
+      - name: crypto_volume
+        description: The volume of Ripple traded on that day.
+      - name: usd_volume
+        description: The volume of USD traded for Ripple on that day.
+  
+  - name: stg_ens
+    description: Staging table for Ethereum Name Service price and volume data.
+    columns:
+      - name: date
+        description: The date of the data point.
+      - name: daily_price_low
+        description: The lowest price of Ethereum Name Service on that day.
+      - name: daily_price_high
+        description: The highest price of Ethereum Name Service on that day.
+      - name: daily_price_open
+        description: The opening price of Ethereum Name Service on that day.
+      - name: daily_price_close
+        description: The closing price of Ethereum Name Service on that day.
+      - name: crypto_volume
+        description: The volume of Ethereum Name Service traded on that day.
+      - name: usd_volume
+        description: The volume of USD traded for Ethereum Name Service on that day.
+  
+  - name: stg_eth
+    description: Staging table for Ethereum price and volume data.
+    columns:
+      - name: date
+        description: The date of the data point.
+      - name: daily_price_low
+        description: The lowest price of Ethereum on that day.
+      - name: daily_price_high
+        description: The highest price of Ethereum on that day.
