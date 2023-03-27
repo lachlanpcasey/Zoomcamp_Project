@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: core
+    meta:
+      materialized: view
+      schema: data_core
+    description: >
+      A core model that joins data from stg_btc, stg_ltc, stg_xrp, stg_ens, and stg_eth.
+    columns:
+      - name: date
+        description: The date for which the prices are reported.
+      - name: btc_daily_price_open
+        description: The opening price of Bitcoin on the given date.
+      - name: xrp_daily_price_open
+        description: The opening price of XRP on the given date.
+      - name: eth_daily_price_open
+        description: The opening price of Ethereum on the given date.
+      - name: ens_daily_price_open
+        description: The opening price of ENS on the given date.
+      - name: ltc_daily_price_open
+        description: The opening price of Litecoin on the given date.
+    relationships:
+      - name: btc
+        description: The table containing data on Bitcoin prices.
+        type: ref
+        to: stg_btc
+      - name: eth
+        description: The table containing data on Ethereum prices.
+        type: ref
+        to: stg_eth
+      - name: xrp
+        description: The table containing data on XRP prices.
+        type: ref
+        to: stg_xrp
+      - name: ltc
+        description: The table containing data on Litecoin prices.
+        type: ref
+        to: stg_ltc
+      - name: ens
+        description: The table containing data on ENS prices.
+        type: ref
+        to: stg_ens
