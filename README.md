@@ -7,15 +7,29 @@ The project is built using open-source tools and frameworks, including Python, P
 
 Repository Contents:
 
-api_scripts directory containing scripts for pulling data from the API and storing it in a PostgreSQL database
+Project directory that contains the scripts required to run the full ETL Process.
 
 dbt directory containing DBT models and related files for processing the data
 
 docs directory containing documentation and sample queries for accessing and analyzing the data in a business intelligence tool
 
-LICENSE file containing the license for the project
-
 README.md file providing an overview of the project and instructions for getting started
+
+# Instructions
+To use this pipeline, one must have access to:
+- DBT Cloud API
+- Google Cloud Platform (Google Cloud Storage and Google Bigquery)
+- Prefect Cloud
+
+In order to use this ETL pipeline, one must follow the following steps:
+1. In the Project folder, change the configure.py to include any relevant information included there, including things like dataset IDs for BigQuery, Bucket names for GCS, Prefect Cloud and DBT Cloud API keys, and cryptocompare API key for the relevant data.
+2. In DBT Cloud, configure your project to access the DBT folder within this github repo.
+3. In Prefect Cloud, ensure you create a DBT credentials block so that you can successfully ping the DBT Cloud API.
+4. Run _python prefect_crypto_flow.py_ for the full ETL process.
+
+Here is the link to my resultant cryptocurrency data dashboard:
+https://docs.google.com/spreadsheets/d/1cO7mWZXv4BG1BCGUdTxBcyGvb9097Z04P4yzcj9QrDE/edit?usp=sharing
+This was used as a proof of concept for a business idea. Unfortunately I cannot allow anyone to refresh this as it will cost money, so the drop down (which uses a parameter custom query) will not work (but rest assured, it does).
 
 Contributors:
 
