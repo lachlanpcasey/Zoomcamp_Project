@@ -6,7 +6,7 @@ models:
       materialized: view
       schema: data_core
     description: >
-      A core model that joins data from stg_btc, stg_ltc, stg_xrp, stg_ens, and stg_eth.
+      A core model that joins data from stg_btc, stg_ltc, stg_xrp, stg_ens, and stg_eth. It displays their opening prices for a given day.
     columns:
       - name: date
         description: The date for which the prices are reported.
