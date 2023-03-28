@@ -26,7 +26,7 @@ To use this pipeline, one must have access to:
 
 In order to use this ETL pipeline, one must follow the following steps:
 1. In the Project folder, change the configure.py to include any relevant information included there, including things like dataset IDs for BigQuery, Bucket names for GCS, Prefect Cloud and DBT Cloud API keys, and cryptocompare API key for the relevant data.
-2. In DBT Cloud, configure your project to access the DBT folder within this github repo.
+2. In DBT Cloud, configure your project to access the DBT folder within this github repo. Also, create a Job that runs this project. In my project, I simply used the job dbt run.
 3. In Prefect Cloud, ensure you create a DBT credentials block so that you can successfully ping the DBT Cloud API.
 4. Run _python prefect_crypto_flow.py_ for the full ETL process.
 
