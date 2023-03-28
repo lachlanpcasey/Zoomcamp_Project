@@ -39,3 +39,26 @@ models:
         description: The volume of ENS traded in USD on the given date.
       - name: ltc_usd_volume
         description: The volume of Litecoin traded in USD on the given date.
+  - name: core_crypto_all_data
+    meta:
+      materialized: view
+      schema: data_core
+    description: >
+      A core model that contains rows for each days price and volume movements for different cryptocurrencies.
+    columns:
+      - name: date
+        description: The date for which the prices are reported.
+      - name: daily_price_low
+        description: The lowest price of the cryptocurrency on that day.
+      - name: daily_price_high
+        description: The highest price of the cryptocurrency on that day.
+      - name: daily_price_open
+        description: The opening price of the cryptocurrency on that day.
+      - name: daily_price_close
+        description: The closing price of the cryptocurrency on that day.
+      - name: crypto_volume
+        description: The volume of the cryptocurrency traded on that day.
+      - name: usd_volume
+        description: The volume of USD traded for the cryptocurrency on that day.
+      - name: crypto
+        description: The name of the cryptocurrency.
