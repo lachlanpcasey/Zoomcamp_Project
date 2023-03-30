@@ -21,7 +21,7 @@ README.md file providing an overview of the project and instructions for getting
 # Instructions
 To use this pipeline, one must have access to:
 - DBT Cloud API
-- Google Cloud Platform (Google Cloud Storage and Google Bigquery)
+- Google Cloud Platform (Google Cloud Storage and Google BigQuery)
 - Prefect Cloud
 
 In order to use this ETL pipeline, one must follow the following steps:
