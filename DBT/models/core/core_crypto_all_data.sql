@@ -1,4 +1,4 @@
-{{ config(materialized='view', schema='data_core') }}
+{{ config(materialized='table', schema='data_core') }}
 
 with btc as (
     select
