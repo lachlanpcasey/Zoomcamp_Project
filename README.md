@@ -24,9 +24,12 @@ To use this pipeline, one must have access to:
 
 In order to use this ETL pipeline, one must follow the following steps:
 1. Go to https://www.cryptocompare.com/ and create an account. Click the 'API' tab at the top of the website, and generate your own personal API. This should be free. Save the API in config.py as ```cryptocompare_api_key```
-2. Go to Google Cloud Platform and ensure you have a new project created. Then go to _IAM and admin_ and click service accounts. Ensure it has access as a BigQuery Admin, as well as Storage Admin. Create a key for this service account and download is as a json. This should be stored within the project folder. (Ensure this is not uploaded to your repo). This can be done by adding my-project-key.json in your gitignore file.
-3. In DBT Cloud, configure your project to access the DBT folder within this github repo. This can be done by using git clone on this repository, making sure to make 'DBT' as the project subdirectory. (Please note, you will need to have a **paid** developer subscription to DBT cloud for this method to work).
-4. Within DBT, create a Job that runs this project. In my project, I simply used the job dbt run. This is also where you will get your prefect_cloud_job_id for the config.py file:
+2. Go to Google Cloud Platform and ensure you have a new project created. Then go to _IAM and admin_ and click service accounts. Ensure it has access as a BigQuery Admin, as well as Storage Admin. Create a key for this service account and download is as a json. This should be stored within the project folder. (Ensure this is not uploaded to your repo). This can be done by adding my-project-key.json in your gitignore file. The name of this file will be used in config.py as the ```creds``` variable.
+3. Then, go to cloud storage -> buckets and create a new bucket. This is where your crypto csv data will be stored. It will be used as your Data Lake. The name of this bucket should be put in your config.py as ```gcs_bucket_name```.
+4. Then, create a folder within this bucket. I called mine crypto_data. This should be added in your config.py as ```crypto_folder ```.
+5. Next, go to the BigQuery tab and click SQL Workspace. You should see your project name. Next to the this, click the 3 dots and press _Create dataset_. This will be what is added to your config.py as ```dataset_id```. This is where your raw data will be populated in your data warehouse.
+6. In DBT Cloud, configure your project to access the DBT folder within this github repo. This can be done by using git clone on this repository, making sure to make 'DBT' as the project subdirectory. (Please note, you will need to have a **paid** developer subscription to DBT cloud for this method to work).
+7. Within DBT, create a Job that runs this project. In my project, I simply used the job dbt run. This is also where you will get your prefect_cloud_job_id for the config.py file:
 
 
 ![image](https://user-images.githubusercontent.com/122522521/228802505-766fd788-3e63-410a-b8c6-6d843236c1be.png)
@@ -34,7 +37,7 @@ In order to use this ETL pipeline, one must follow the following steps:
 
 Note that it is the final 6 digits of the URL.
 
-5. In Prefect Cloud, ensure you create a DBT credentials block so that you can successfully ping the DBT Cloud API. This can be done using the code:
+6. In Prefect Cloud, ensure you create a DBT credentials block so that you can successfully ping the DBT Cloud API. This can be done using the code:
 ```python
 
 from prefect_dbt.cloud import DbtCloudCredentials
@@ -48,7 +51,7 @@ DbtCloudCredentials(
 
 This should then be used in config.py as ```prefect_cloud_dbt_block_name```
 
-6. Run ```python prefect_crypto_flow.py``` for the full ETL process.
+7. Run ```python prefect_crypto_flow.py``` for the full ETL process.
 
 This is the final cryptocurrency dashboard:
 
