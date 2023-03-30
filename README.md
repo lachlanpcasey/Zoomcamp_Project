@@ -58,6 +58,7 @@ This is the final cryptocurrency dashboard:
 
 Here is the link to my resultant cryptocurrency data dashboard:
 https://docs.google.com/spreadsheets/d/1cO7mWZXv4BG1BCGUdTxBcyGvb9097Z04P4yzcj9QrDE/edit?usp=sharing
+
 This was used as a proof of concept for a business idea. Unfortunately I cannot allow anyone to refresh this as it will cost money, so the drop down (which uses a parameter custom query) will not work (but rest assured, it does).
 
 Contributors:
