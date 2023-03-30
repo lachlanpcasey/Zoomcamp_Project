@@ -12,9 +12,7 @@ Repository Contents:
 
 Project directory that contains the scripts required to run the full ETL Process.
 
-dbt directory containing DBT models and related files for processing the data
-
-docs directory containing documentation and sample queries for accessing and analyzing the data in a business intelligence tool
+DBT directory containing DBT models and related files for processing the data
 
 README.md file providing an overview of the project and instructions for getting started
 
