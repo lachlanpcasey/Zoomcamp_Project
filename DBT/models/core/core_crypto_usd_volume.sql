@@ -1,4 +1,4 @@
-{{ config(materialized='table', schema='data_core', clustering = ['date']) }}
+{{ config(materialized='table', schema='data_core') }}
 
 with btc as (
     select *,
