@@ -1,12 +1,19 @@
 # Cryptocurrency Data Engineering Project [Zoomcamp]
 ## Table of contents
 - [Project Purpose](#project-purpose)
+- [ETL Pipeline](#etl-pipeline)
 - [Repo Guide](#repo-guide)
 - [Instructions](#instructions)
 - [Dashboard](#dashboard)
 
 ## Purpose <a name="project-purpose"></a>
 The aim of this project was to ingest historical **daily** cryptocurrency data for multiple cryptocurrencies. This is to be ingested into google cloud storage, uploaded into Google BigQuery, transformed using Data Build Tool and loaded back into BigQuery, and then visualised within Google Sheets using the BigQuery Data Connector.
+
+## ETL Pipeline
+
+![Crypto Data Engineering Project](https://user-images.githubusercontent.com/122522521/229351796-0664d37e-6915-4db7-b431-2f3b1391d755.png)
+
+
 ## Repo Guide
 This repository contains all the files and code necessary to run a data engineering project that pulls cryptocurrency data from an API, stores it in a data warehouse, processes it with DBT, and makes it available for analysis in a business intelligence tool.
 
