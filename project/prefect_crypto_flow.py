@@ -57,7 +57,7 @@ def crypto_flow(crypto: str):
 def run_dbt_job_flow():
         trigger_dbt_cloud_job_run(
         dbt_cloud_credentials=dbt_cloud_credentials,
-        job_id=prefect_cloud_job_id
+        job_id=dbt_job_id
     )
 
 
