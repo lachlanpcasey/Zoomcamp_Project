@@ -1,7 +1,13 @@
-# Cryptocurrency Data Engineering Project
-# Problem
+# Cryptocurrency Data Engineering Project [Zoomcamp]
+## Table of contents
+- [Project Purpose](#project-purpose)
+- [Repo Guide](#repo-guide)
+- [Instructions](#instructions)
+- [Dashboard](#dashboard)
+
+## Purpose <a name="project-purpose"></a>
 The aim of this project was to ingest historical **daily** cryptocurrency data for multiple cryptocurrencies. This is to be ingested into google cloud storage, uploaded into Google BigQuery, transformed using Data Build Tool and loaded back into BigQuery, and then visualised within Google Sheets using the BigQuery Data Connector.
- # Repo Guide
+## Repo Guide
 This repository contains all the files and code necessary to run a data engineering project that pulls cryptocurrency data from an API, stores it in a data warehouse, processes it with DBT, and makes it available for analysis in a business intelligence tool.
 
 The project is designed to be modular and scalable, allowing for easy adaptation to different data sources and use cases. It includes scripts for pulling data from the CyptoCompare API and storing it in a PostgreSQL database, as well as a set of DBT models for transforming the raw data into a clean, structured format. Additionally, the repository includes documentation and sample queries for accessing and analyzing the data in a business intelligence tool.
@@ -16,7 +22,7 @@ DBT directory containing DBT models and related files for processing the data
 
 README.md file providing an overview of the project and instructions for getting started
 
-# Instructions
+## Instructions
 To use this pipeline, one must have access to:
 - DBT Cloud API (Paid)
 - Google Cloud Platform (Google Cloud Storage and Google BigQuery) (Paid)
@@ -55,7 +61,7 @@ Note that it is the final 6 digits of the URL.
 
 15. This will run the entire ETL process. You will be able to see your run within prefect cloud, DBT (as a job that was run), and within both GCS and BQ as csv files, as well as tables will have been created.
 
-
+## Dashboard
 This is the final cryptocurrency dashboard:
 
 ![image](https://user-images.githubusercontent.com/122522521/228805080-97bf03ea-455b-4fbc-9d40-8a037db492f2.png)
