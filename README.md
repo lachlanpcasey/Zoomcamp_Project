@@ -18,9 +18,9 @@ Repository Contents:
 
 Project directory that contains the scripts required to run the full ETL Process.
 
-DBT directory containing DBT models and related files for processing the data
+DBT directory containing DBT models and related files for processing the data.
 
-README.md file providing an overview of the project and instructions for getting started
+README.md file providing an overview of the project and instructions for getting started.
 
 ## Instructions
 To use this pipeline, one must have access to:
