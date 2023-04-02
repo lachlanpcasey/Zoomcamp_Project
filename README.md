@@ -34,7 +34,7 @@ In order to use this ETL pipeline, one must follow the following steps:
 7. Within DBT, create a Job that runs this project. In my project, I simply used the job dbt run. This is also where you will get your dbt_job_id for the config.py file:
 
 
-![image](https://user-images.githubusercontent.com/122522521/228802505-766fd788-3e63-410a-b8c6-6d843236c1be.png)
+![image](https://user-images.githubusercontent.com/122522521/229350972-f4160fe4-f8a9-4091-9452-a7fed82a19b6.png)
 
 
 Note that it is the final 6 digits of the URL.
