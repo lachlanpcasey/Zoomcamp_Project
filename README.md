@@ -76,6 +76,13 @@ This is the final cryptocurrency dashboard:
 ![image](https://user-images.githubusercontent.com/122522521/228805282-5c85e734-cabc-4f27-b460-c155d24c5047.png)
 
 
+**Additional Chart:**
+
+
+![chart (2)](https://user-images.githubusercontent.com/122522521/229352698-2f62611d-e313-4ddf-8740-a4a8d68d0c7e.png)
+
+
+
 Here is the link to my resultant cryptocurrency data dashboard:
 https://docs.google.com/spreadsheets/d/1cO7mWZXv4BG1BCGUdTxBcyGvb9097Z04P4yzcj9QrDE/edit?usp=sharing
 
