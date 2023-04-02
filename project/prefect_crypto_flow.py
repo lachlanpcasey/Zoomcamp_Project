@@ -19,7 +19,10 @@ from config import prefect_cloud_api_key, prefect_cloud_dbt_block_name, prefect_
 # set the API key as an environment variable
 os.environ["PREFECT__CLOUD__API_KEY"] = prefect_cloud_api_key
 
-# In[2]:
+DbtCloudCredentials(
+    api_key = dbt_api_key,
+    account_id = dbt_account_id
+).save(prefect_cloud_dbt_block_name
 dbt_cloud_credentials = DbtCloudCredentials.load(prefect_cloud_dbt_block_name)
 
 @task
