@@ -89,7 +89,7 @@ This is the final cryptocurrency dashboard:
 **Additional Chart:**
 
 
-![chart (2)](https://user-images.githubusercontent.com/122522521/229352698-2f62611d-e313-4ddf-8740-a4a8d68d0c7e.png)
+![Cryptocurrency Volume Market Share (% USD)](https://user-images.githubusercontent.com/122522521/229414586-83639a84-d01e-4aff-9430-544419743a84.png)
 
 
 
