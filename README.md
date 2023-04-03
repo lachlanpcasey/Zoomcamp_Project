@@ -92,7 +92,7 @@ Note that it is the final 6 digits of the URL.
 
 10. Now, go to prefect cloud online at https://www.prefect.io/cloud/. If you have an account login, otherwise create an account.
 
-11. Next, Create a workspace. To access DBT cloud and run your pipeline, you will need an API key to communicate with prefect cloud 2. To get this API key, click on your profile in the bottom left corner, and click the settings cog as shown in the image below:
+11. Next, Create a workspace. To access Prefect Cloud 2 and run your pipeline, you will need an API key to communicate with prefect cloud 2. To get this API key, click on your profile in the bottom left corner, and click the settings cog as shown in the image below:
 
 ![image](https://user-images.githubusercontent.com/122522521/229407825-05883f13-7b27-4696-b9e8-3489492b40ae.png)
 
@@ -101,6 +101,8 @@ Note that it is the final 6 digits of the URL.
 13. To login to prefect cloud locally, assuming you have installed prefect with ```pip install prefect``` and ```pip install prefect-cloud```, now you should run ```prefect cloud login```. This will ask you to login through either your browser or with an API key. Choose API key, and paste your API key into the command line. You should now get a prompt that says 'Authenticated with Prefect Cloud!'.
 
 14. Name your ```prefect_cloud_dbt_block_name ``` within config.py. This can be any name. Mine was called 'DBT-creds'.
+
+15. Fill out your ```prefect_crypto_list_for_etl``` list within config.py. I used ["BTC","ETH","LTC","XRP","ENS"] which will work with the DBT Cloud files provided. If you want to use a different set of cryptocurrencies, you will need to alter the DBT code in the DBT folder of the main directory. For simplicity, I ask that you use the same list.
 
 15. Ensure all variables within config.py have been filled appropriately. 
 
