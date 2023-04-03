@@ -39,10 +39,10 @@ To use this pipeline, one must have access to:
 
 In order to use this ETL pipeline, one must follow the following steps:
 1. Go to https://www.cryptocompare.com/ and create an account. Click the 'API' tab at the top of the website, and generate your own personal API. This should be free. Save the API in config.py as ```cryptocompare_api_key```
-2. Go to Google Cloud Platform and ensure you have a new project created. Then go to _IAM and admin_ and click service accounts. Ensure it has access as a BigQuery Admin, as well as Storage Admin. Create a key for this service account and download it as a json. Copy and paste this file into the creds.json file located in the project directory.
-3. Then, go to cloud storage -> buckets and create a new bucket. This is where your crypto csv data will be stored. It will be used as your Data Lake. The name of this bucket should be put in your config.py as ```gcs_bucket_name```.
+2. Go to Google Cloud Platform and ensure you have a new project created. Then go to _IAM and admin_ and click service accounts. Create a service account, and ensure it has access as a BigQuery Admin, as well as Storage Admin. Create a key for this service account and download it as a json. Copy and paste this file into the creds.json file located in the project directory. Be sure to include this file in gitignore if you are managing your code through github, otherwise others will have access to this confidential information.
+3. Then, within Google Cloud Platform go to cloud storage -> buckets and create a new bucket. This is where your crypto csv data will be stored. It will be used as your Data Lake. The name of this bucket should be put in your config.py as ```gcs_bucket_name```.
 4. Then, create a folder within this bucket. I called mine crypto_data. This should be added in your config.py as ```crypto_folder ```.
-5. Next, go to the BigQuery tab and click SQL Workspace. You should see your project name. Next to the this, click the 3 dots and press _Create dataset_. This will be what is added to your config.py as ```dataset_id```. This is where your raw data will be populated in your data warehouse.
+5. Next, go to the BigQuery tab within Google Cloud Project and click SQL Workspace. You should see your project name. Next to the this, click the 3 dots and press _Create dataset_. This will be what is added to your config.py as ```dataset_id```. This is where your raw data will be populated in your data warehouse.
 6. In DBT Cloud, configure your project to access the DBT folder within this github repo. This can be done by using git clone on this repository, making sure to make 'DBT' as the project subdirectory. (Please note, you will need to have a **paid** developer subscription to DBT cloud for this method to work).
 7. Within DBT, create a Job that runs this project. In my project, I simply used the job dbt run. This is also where you will get your dbt_job_id for the config.py file:
 
@@ -56,17 +56,27 @@ Note that it is the final 6 digits of the URL.
 
 9. On the same page, now click 'API Access'. If you already have an API key, copy it to your clipboard and paste it into config.py as ```dbt_api_key```. Otherwise, create a new API key and do the aforementioned steps.
 
-10. Name your ```prefect_cloud_dbt_block_name ``` within config.py.
+10. Now, go to prefect cloud online at https://www.prefect.io/cloud/. If you have an account login, otherwise create an account.
 
-11. Ensure all variables within config.py have been filled appropriately. 
+11. Next, Create a workspace. To access DBT cloud and run your pipeline, you will need an API key to communicate with prefect cloud 2. To get this API key, click on your profile in the bottom left corner, and click the settings cog as shown in the image below:
 
-12. Ensure you have docker installed on your computer. If you are not sure run ```pip install docker```.
+![image](https://user-images.githubusercontent.com/122522521/229407825-05883f13-7b27-4696-b9e8-3489492b40ae.png)
 
-13. Now, navigate to the project directory, and run: ```docker build -t crypto_image .```.
+12. Next, click the '+' icon to create a new api key, and call it what you want. Mine is prefect_crypto_api_key. Click create, and save this API key somewhere safe. This should also be added in config.py as ```prefect_cloud_api_key``` .
 
-14. Run the docker image with ```docker run -p 8000:8000 crypto_image```
+13. To login to prefect cloud locally, assuming you have installed prefect with ```pip install prefect``` and ```pip install prefect-cloud```, now you should run ```prefect cloud login```. This will ask you to login through either your browser or with an API key. Choose API key, and paste your API key into the command line. You should now get a prompt that says 'Authenticated with Prefect Cloud!'.
 
-15. This will run the entire ETL process. You will be able to see your run within prefect cloud, DBT (as a job that was run), and within both GCS and BQ as csv files, as well as tables will have been created.
+14. Name your ```prefect_cloud_dbt_block_name ``` within config.py. This can be any name. Mine was called 'DBT-creds'.
+
+15. Ensure all variables within config.py have been filled appropriately. 
+
+16. Ensure you have docker installed on your computer. If you are not sure run ```pip install docker```.
+
+17. Now, navigate to the project directory, and run: ```docker build -t crypto_image .```.
+
+18. Run the docker image with ```docker run -p 8000:8000 crypto_image```
+
+19. This will run the entire ETL process. You will be able to see your run within prefect cloud, DBT (as a job that was run), and within both GCS and BQ as csv files, as well as tables will have been created.
 
 ## Dashboard
 This is the final cryptocurrency dashboard:
