@@ -112,7 +112,7 @@ Note that it is the final 6 digits of the URL.
 
 18. Run the docker image with ```docker run -p 8000:8000 crypto_image```
 
-19. This will run the entire ETL process. You will be able to see your run within prefect cloud, DBT (as a job that was run), and within both GCS and BQ as csv files, as well as tables will have been created.
+19. This will run the entire ETL process. You will be able to see your run within prefect cloud, DBT Cloud (as a job that was run), GCS (as CSV files) and BigQuery, with raw csv files, staging and core tables.
 
 ## Dashboard
 This is the final cryptocurrency dashboard:
