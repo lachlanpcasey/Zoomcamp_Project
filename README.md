@@ -9,6 +9,7 @@
 
 ## Purpose <a name="project-purpose"></a>
 The aim of this project was to ingest historical **daily** cryptocurrency data for multiple cryptocurrencies. This is to be ingested into google cloud storage, uploaded into Google BigQuery, transformed using Data Build Tool and loaded back into BigQuery, and then visualised within Google Sheets using the BigQuery Data Connector.
+
 I want to be able to analyse the market share of the cryptocurrencies Bitcoin, Ethereum, Litecoin, XRP and Ethereum Name Service by volume traded in USD, as well as analyse the price movements of individual cryptocurrencies.
 
 ## ETL Pipeline
