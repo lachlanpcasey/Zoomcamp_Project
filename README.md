@@ -3,7 +3,8 @@
 - [Project Purpose](#project-purpose)
 - [ETL Pipeline](#etl-pipeline)
 - [Repo Guide](#repo-guide)
-- [Instructions](#instructions)
+- [Requirements](#requirements)
+- [How to run](#how-to-run)
 - [Dashboard](#dashboard)
 
 ## Purpose <a name="project-purpose"></a>
@@ -30,7 +31,7 @@ DBT directory containing DBT models and related files for processing the data.
 
 README.md file providing an overview of the project and instructions for getting started.
 
-## Instructions
+## Requirements
 To use this pipeline, one must have access to:
 - DBT Cloud API (Paid)
 - Google Cloud Platform (Google Cloud Storage and Google BigQuery) (Paid)
@@ -38,6 +39,35 @@ To use this pipeline, one must have access to:
 - Docker (Free)
 - Cryptocompare API (Free)
 
+## Configuration
+In order to make sure you can run this pipeline, you must complete config.py in the project folder.
+Here is a list of variables, with an explanation of each one:
+
+```cryptocompare_api_key```: The API key for your account at https://www.cryptocompare.com/
+
+```gcs_bucket_name```: Your bucket name in Google Cloud Storage.
+
+```prefect_cloud_api_key```: Your API key in Prefect Cloud 2.
+
+```prefect_cloud_dbt_block_name```: The block name of your prefect cloud dbt block. This can be whatever you like, and will rename any existing dbt cloud credentials you have saved in Prefect Cloud 2.
+
+```dbt_api_key```: Your DBT Cloud API Key. This requires a paid monthly subscription to DBT Cloud.
+
+```dbt_account_id```: Your DBT Cloud Account ID.
+
+```dbt_job_id```: The job ID you want to run in DBT cloud. 
+
+```prefect_crypto_list_for_etl```: A list of cryptocurrencies you want to use for your pipeline. I used ["BTC","ETH","LTC","XRP","ENS"].
+
+```crypto_folder```: The name of your folder within your Google Cloud Storage Bucket.
+
+```dataset_id```: The name of your dataset within Google BigQuery.
+
+```creds```: The name of your json file with your Google Cloud Project service account credentials. Please keep this as creds.json.
+
+In order to get these variables, follow the instructions in [How to run](#how-to-run).
+
+## How to run
 In order to use this ETL pipeline, one must follow the following steps:
 1. Go to https://www.cryptocompare.com/ and create an account. Click the 'API' tab at the top of the website, and generate your own personal API. This should be free. Save the API in config.py as ```cryptocompare_api_key```
 2. Go to Google Cloud Platform and ensure you have a new project created. Then go to _IAM and admin_ and click service accounts. Create a service account, and ensure it has access as a BigQuery Admin, as well as Storage Admin. Create a key for this service account and download it as a json. Copy and paste this file into the creds.json file located in the project directory. Be sure to include this file in gitignore if you are managing your code through github, otherwise others will have access to this confidential information.
