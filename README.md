@@ -8,9 +8,11 @@
 - [Dashboard](#dashboard)
 
 ## Purpose <a name="project-purpose"></a>
-The aim of this project was to ingest historical **daily** cryptocurrency data for multiple cryptocurrencies. This is to be ingested into google cloud storage, uploaded into Google BigQuery, transformed using Data Build Tool and loaded back into BigQuery, and then visualised within Google Sheets using the BigQuery Data Connector.
+When analysing Cryptocurrency data, I often find myself wanting data that is up to date within Google Sheets, so that it can be used with my other Google Sheets projects. Whilst Google Sheets has a built in function called GOOGLEFINANCE, I find that it is often buggy and does not have the cryptocurrencies I want.
 
-I want to be able to analyse the market share of the cryptocurrencies Bitcoin, Ethereum, Litecoin, XRP and Ethereum Name Service by volume traded in USD, as well as analyse the price movements of individual cryptocurrencies.
+Hence, the aim of this project was to ingest historical **daily** cryptocurrency data for multiple cryptocurrencies. This is to be ingested into Google Cloud Storage, uploaded into Google BigQuery, transformed using Data Build Tool and loaded back into BigQuery, and then visualised within Google Sheets using the BigQuery Data Connector.
+
+I want to be able to analyse the market share of the cryptocurrencies Bitcoin, Ethereum, Litecoin, XRP and Ethereum Name Service by volume traded in USD, as well as analyse the price movements of individual cryptocurrencies on a daily basis, whilst having control of the governance of the data to ensure it is complete and accurate.
 
 ## ETL Pipeline
 
