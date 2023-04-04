@@ -121,6 +121,9 @@ This is the final cryptocurrency dashboard:
 
 ![image](https://user-images.githubusercontent.com/122522521/228805282-5c85e734-cabc-4f27-b460-c155d24c5047.png)
 
+![image](https://user-images.githubusercontent.com/122522521/229772278-32b58c0f-bbf9-49c4-aa36-a52008bcebf9.png)
+
+
 
 **Additional Chart:**
 
