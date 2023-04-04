@@ -108,7 +108,7 @@ Note that it is the final 6 digits of the URL.
 
 16. Ensure you have docker installed on your computer. If you are not sure run ```pip install docker```.
 
-17. Now, navigate to the project directory, and run: ```docker build -t crypto_image .```.
+17. Now, navigate to the Project directory, and run: ```docker build -t crypto_image .```.
 
 18. Run the docker image with ```docker run -p 8000:8000 crypto_image```
 
